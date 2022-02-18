@@ -1,0 +1,591 @@
+body{
+margin: 0;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 15px;
+line-height: 1.6;
+color: #CFD8DC;
+}
+
+.text{
+  color: black;
+  vertical-align: top;
+  text-align: 10px;
+
+}
+
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+
+
+
+ 
+  /* container */
+  .container{
+width: 100%;
+max-width: 1230px;
+padding: 0 15px;
+margin: 0 auto;
+  }
+  /* INTRO */
+  .intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: url("../Foto/laptop-5428881_960_720.webp") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+
+  .intro__inner{
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+.intro__title{
+  color: gold;
+  font-size: 90px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.intro__title:after{
+  content: "";
+  display: block;
+  width: 300px;
+  height: 5px;
+  margin: 30px auto;
+
+
+  background-color: gold;
+}
+
+.intro__suptitle{
+  margin-bottom: 16px;
+  font-family: 'Kaushan Script',
+  cursive;
+  font-size: 44px;
+  color: gold;
+}
+
+  /* header */
+  .header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding-top: 10px;
+  }
+
+
+
+  .header__logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+  }
+  .header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.header.active{
+  background-color:#eeedf0;
+}
+
+  /* nav */
+  .nav{
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .nav__link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+    transition: color .1s linear;
+    position: relative;
+  }
+  .nav__link:hover {
+    color: rgb(25, 0, 255);
+  }
+
+  .nav__link::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: gold;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .3s linear;
+  }
+  .nav__link:hover::after{
+    opacity: 1;
+  }
+
+/* МЕНЮ бургер */
+
+.nav-toggle{
+  width: 30px;
+  padding: 10px 0;
+  position: absolute;
+
+  display: none;
+  font-size: 0;
+  color: transparent;
+  border: 0;
+
+  background: none;
+  cursor: pointer;
+  top: 25px;
+
+  right: 40px;
+  z-index: 1;
+}
+
+.nav-toggle:focus{
+  outline: 0;
+}
+
+.nav-toggle__item{
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: gold;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+transition: background .2s linear;
+}
+
+.nav-toggle.active .nav-toggle__item{
+  background: none;
+}
+
+.nav-toggle.active .nav-toggle__item:before{
+  transform-origin: left top;
+  transform: rotate(45deg) translateX(-2px);
+}
+
+.nav-toggle.active .nav-toggle__item:after{
+  transform-origin: left bottom;
+  transform: rotate(-45deg) translateX(-3px);
+}
+
+
+
+
+.nav-toggle__item:before{
+  top: -8px;
+
+}
+
+.nav-toggle__item:after{
+  bottom: -8px;
+}
+
+.nav-toggle__item:before,
+.nav-toggle__item:after{
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: gold;
+  left: 0;
+  z-index: 1;
+  transition: transform .2s linear;
+}
+
+  /* Button */
+  .btn{
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 15px;
+    border: 5px solid gold;
+    color: black;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .1s linear, color .2s linear;
+  }
+  .btn:hover{
+    background-color: black;
+    color: white;
+  }
+
+  /* section */
+.section{
+  padding: 80px 0;
+}
+
+.section--gray{
+  background-color: #f8f8f8;
+}
+
+.section--devices{
+  margin-bottom: -100px;
+background: url(../Foto/фон.jpeg) center no-repeat;
+-weblit-background-size: cover;
+background-size: cover;
+}
+
+
+.section__header{
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.section__suptitle{
+  font-size: 20px;
+  color: black;
+  font-family:'Kaushan Script', cursive ;
+}
+
+.section__title{
+  font-size: 25px;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+}
+.section__title:after{
+  content: "";
+  display: block;
+  width: 200px;
+  height: 5px;
+  margin: 20px auto 0;
+
+  background-color: rgb(94, 94, 94);
+}
+
+.section__text{
+  font-size: 15px;
+  color: black;
+}
+
+.devices{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.devices__item{
+display: block;
+max-width: 100%;
+height: auto;
+right: 60px;
+}
+
+/* about */
+.about{
+display: flex;
+justify-content: space-between;
+}
+
+.about__item{
+  width: 30%;
+}
+.about__img{
+  width: 227px;
+  height: 222;
+  margin: 60px;
+}
+.foto{
+margin: 50px;
+left: 50px;
+}
+
+.card{
+padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  width: 433px;
+}
+
+/*Reviews*/
+
+.reviews{
+  padding: 0 110px;
+  position: relative;
+}
+
+.reviews__item{
+padding-left: 205px;
+position: relative;
+}
+
+.reviews__photo{
+  display: block;
+width: 145px;
+height: 145px;
+border-radius: 7px;
+box-shadow: 5px 5px 10px 5px black;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+
+}
+
+.reviews__text{
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+}
+
+.reviews__author{
+  font-family: 'Kaushan Script',
+  cursive;
+  font-size: 24px;
+  color: black
+}
+.reviews__author:before{
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 5px;
+  margin-right: 15px;
+  background-color: gold;
+}
+.social-icons {
+  background-color: gold;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+.social-icons>li {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+.social-icons a {
+  position: relative;
+  background-color: #eee;
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: background-color .3s ease-in-out;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: .25rem;
+}
+.social-icons a:hover {
+  background-color: #e0e0e0;
+}
+.social-icons a::before {
+  content: "";
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  left: .65rem;
+  top: .65rem;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+.social-icons .social-icon-wha::before {
+  background-image: url("../Foto/ватсап.png");
+  width: 25px;
+  height: 25px;
+}
+.social-icons .social-icon-ins::before {
+  background-image: url("../Foto/инстаграм.jpg");
+  width: 25px;
+  height: 25px;
+}
+
+
+@media (max-width: 1230px){
+/* INTRO*/
+.intro__suptitle{
+  font-size: 52px;
+}
+.intro__title{
+  font-size: 120px;
+}
+}
+
+@media (max-width: 990px){
+  .intro__suptitle{
+    font-size: 32px;
+  }
+  .intro__title{
+    font-size: 80px;
+  }
+  }
+  /*Reviews*/
+
+  .reviews{
+    padding: 0 60px;
+  }
+  .reviews__photo{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .reviews__item{
+    padding-left: 175px;
+  }
+
+@media (max-width: 770px) {
+
+/* INTRO */
+.intro{
+min-height: 650px;
+}
+  /* header */
+.header{
+  padding: 10px 0;
+}
+
+  .about__img{
+    margin: 60px;
+  }
+  .devices__item{
+  margin: 50px;
+  width: 227px;
+}
+/*nav*/
+.nav{
+display: none;
+width: 100%;
+position: absolute;
+top: 100%;
+left: 0;
+
+background-color: #eeedf0;
+}
+
+.nav.active{
+  display: block;
+}
+
+.nav__link{
+  display: block;
+  margin: 0;
+  padding: 8px 20px;
+}
+
+.header.active{
+  background-color: #eeedf0;
+}
+
+.nav-toggle{
+  display: block;
+}
+
+.reviews__item{
+  padding-left: 0;
+}
+.reviews__photo{
+  position: static;
+  margin: 0 auto 30px;
+}
+
+.reviews__text{
+  font-size: 16px;
+}
+
+.reviews__author{
+  font-size: 20px;
+}
+    /*SECTION*/
+.section{
+  padding: 40px 0;
+}
+.section__header {
+  margin-bottom: 50px;
+}
+
+.section__suptitle{
+  font-size: 15px;
+  padding: 0;
+}
+.section__title{
+  font-size: 19px;
+  padding: 0;
+}
+.section__title:after{
+margin: 10px auto;
+}
+}   
+
+.card{
+  width: 99px;
+}
+    
+
+    @media (max-width: 575px){
+      .intro__suptitle{
+        font-size: 22px;
+      }
+      .intro__title{
+        font-size: 40px;
+      }
+      }
+      .text{
+      color: black;
+      vertical-align: top;
+      text-align: 7px;
+      margin: 18px;}
+    /*SECTION*/
+
+.section{
+  padding: 5px 0;
+}
+    .section__header {
+      margin-bottom: 50px;
+    }
+
+    .section__suptitle{
+      font-size: 15px;
+      padding: 0;
+    }
+    .section__title{
+      font-size: 19px;
+      padding: 0;
+    }
+.section__title:after{
+  margin: 10px auto;
+}
+.about__img{
+  margin: 30px;
+}
+
+.devices{
+  max-width: 320px;
+}
+.reviews{
+  padding: 0;
+}
